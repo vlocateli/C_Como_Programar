@@ -1,0 +1,18 @@
+repeticao por contador (definida)
+repeticao controlada por sentinela (indefinida)
+
+#include<stdio.h>
+int main(void){
+  int c = 0;
+  while(c <- 10){
+    printf("%d ",c);
+    ++c;
+  }
+
+  printf("\n");
+  return 0;
+}
+Saida:
+    1 2 3 4 5 6 7 8 9 10 
+
+
