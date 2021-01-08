@@ -1,3 +1,5 @@
+//C como programar
+
 repeticao por contador (definida)
 repeticao controlada por sentinela (indefinida)
 
