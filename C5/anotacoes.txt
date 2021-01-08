@@ -1,0 +1,59 @@
+Introudção ao comandos for,do ... while, break, switch e continue,.
+
+tipos de repetição:
+  definida - controlada por contador
+  indefinida - controlada por sentinela
+
+exemplos:
+
+#include<stdio.h>
+#define N 10
+int main(void){
+  int c; // contador
+  for(c = 0;c<N;c++){
+    printf("%d ",c);
+  }
+  printf("\n");
+
+  c = 0;
+  do{
+    printf("%d ",c);
+    c++;
+  }
+  while(c<N);
+
+
+  return 0;
+}
+
+
+Não é recomandado usar numero em ponto flutuante como contadores, por os valores serem aproximados.
+
+----
+Erros comuns:
+1) colocar = no lugar de == em expressões condicionais.
+
+exemplo:
+      int x;
+      x = 6;
+      if(x = 5)
+        printf("Erro logico\n");
+Se executarmos o codigo acima, ele imprimará a mensagem "Erro logico\n", mas por que isso ocorre?
+Neste if, a variavel x recebe 5, pois o = é atribuicao e nao operador de comparacao.
+
+Escrito corretamente:
+if(x == 5)
+  printf("Agora esta correto\n");
+
+Outra forma de contornar este erro é escrevendo desta maneira:
+if(5 = x)
+ ...
+Se escrevermos assim, ainda nao esta correto mas ao menos o compilador nos avisará que a condicao deste if esta errada.
+
+Ai podemos escrever de maneira correta:
+if(5 == x):
+ ...
+
+Dica: Sempre coloque a constante a esquerda, para assim evitar este erro.
+
+

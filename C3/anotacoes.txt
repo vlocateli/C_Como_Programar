@@ -1,0 +1,234 @@
+-ANOTAÇÕES CAPÍTULO 03 -
+--este capítulo apresenta a noção de algoritmo, pseudocódigo, estrutura de controle,estrutura de seleção (if, if / else , switch),estrutura de repetição (while,do ... while e for);
+
+==================
+
+
+estrutura if -> se condicao == verdadeira entao execute comando1,...comando n;
+
+Em C: if (condition){
+	command 01;
+	command 02;
+	...
+	command n;
+}
+
+para executar apenas 1 comando, podemos utilizar em C:
+if(condition)
+	commando unico;
+
+Exemplo: data a nota de um aluno, selecionar os alunos com nota maior que 60, exibindo uma mensagem na tela ("Vc passou na materia, parabens!").
+(...)
+
+if (nota > 60)
+	printf("Voce passou na materia, parabens!\n"); //fim do if
+
+(...)
+
+Estrutura if/else -> Se condicao == verdade entao execute comando 1, comando 2, ... ,comando n; caso contrario execute comando 1, comando 2, ... ,comando n;
+
+Em C temos:
+	if (condition){
+		command 01;
+		command 02;
+		...
+		command n;
+	}
+	else{
+	   command 01;
+	   command 02;
+	   ...
+	   command n;
+	}
+
+Exemplo: Imprimir a mensagem "Aprovado\n" caso o aluno tenha nota maior que 60, caso contrário imprima a mensagem "Reprovado\n".
+
+if(nota>60)
+	printf("Aprovado\n"); //endif 
+else
+	printf("Reprovado\n"); //endelse
+
+Operador ternário -- (?:) -> É semelhante ao operador if/else, mas com 3 operandos.
+
+Usando o exemplo do if/else podemos montar o mesmo exeplo com operador ternario.
+
+printf("%s",if nota > 60 ? "Aprovado\n" : "Reprovado\n");
+
+A estrutura do operador ternário seria descrita como (condicao ? commando para executar caso a condicao seja verdadeira : comando caso a condicao seja falsa);
+
+podemos tambem escrever da seguinte forma:
+	nota >= 60 ? printf("Aprovado\n") : printf("Reprovado\n");
+
+ Estruturas if/else aninhadas 
+
+se nota>= 90 entao:
+	imprima A
+
+se nao
+	se nota >= 80
+		imprpima B
+se nao 
+	se nota >= 70
+		imprima C
+se nao 
+	se nota >= 60
+		imprima D
+
+	se nao
+		imprima F
+Em C teriamos:
+
+if (nota >= 90)
+	printf("A\n");// end_if
+
+else if (nota>=80)
+	printf("B\n"); // end_else_if
+
+else if (nota>=70)
+	printf("C\n"); // end_else_if
+
+else if(nota>=60)
+	printf("B\n"); // end_else_if
+
+else
+	printf("F\n"); // end_else
+
+
+Instrução vazia
+	if(condicao)
+	;
+
+estrutura de repetição while
+C = 0
+enquanto C é menor que 10, C = C + 1
+
+na Linguagem C, temos:
+int C = 0;
+while(c<10)
+	c++;
+ou
+
+while(c<10)
+	c+=1;
+
+ou ainda
+
+while (c<10)
+	c = c + 1;
+
+-----
+Podemos escrever assim como as estruturas de seleção, podemos criar blocos de comandos com estruturas de repetição
+
+while(c <10){
+	printf("%02d",c);
+	c++;
+}
+
+---
+simulando a execução do while
+
+var: c  | Tela
+c = 0   | 0
+c = 1   | 1
+c = 2   | 3
+...
+c = 9   | 9
+c = 10  | 
+
+---
+repetição controlada por contador - Programa Exemplo 01 - Media da soma das notas de 10 alunos.
+---
+valor de sentinela (valor  sinalizador / valor de flag);
+Exemplo:
+      int n;
+      printf("Digite o numero de repeticoes\n");
+      scanf("%d",&n);
+      int cont = 0;
+      while(cont < n)
+        {
+          printf("%02d ",cont);
+          cont++;
+
+
+        }
+      printf("\n");
+  ou ainda:  
+      int n, soma = 0;;
+
+      printf("Digite 0 para parar a soma\n");
+      while(n != 0){
+        printf("Digite 0 para parar a soma\n");
+        printf("Digite o valor de N\n")
+        scanf("%d",&n);
+      }
+
+--
+Escreva 4 instruções, cada uma deve somar 1 a variavel inteira x;
+int x;
+x = 10;
+
+x = x + 1;
+x++;
+x+=1;
+++x;
+=================
+Diferenças entre var++  e ++var
+#include<stdio.h>
+
+int main(void){
+  int c;
+  c = 10;
+  ////
+  printf("%d\n",c);
+  printf("%d\n",c++);
+  printf("%d\n",c);
+  ///
+  
+  c = 10;
+  //
+  printf("%02d\n",c);
+  printf("%02d\n",++c);
+  printf("%02d\n",c);
+  //
+
+  return 0;
+
+}
+
+====================
+PRINT_DO_PROGRAMA_ACIMA:
+10
+10
+11
+--
+10
+11
+11
+
+====================
+
+--
+Exercícios 3.3:
+Escreva em uma única instrução:
+a) z = x++ + y;
+b) produto*=2;
+c) produto = produto * 2;
+d) if(contador > 10)
+    printf("Contado maior que 10\n");
+e)  total -= --x;
+f)  total += x--;
+g)  q = q % divisor;
+    q %= divisor;
+h) printf("%.2f",123.456);
+   123.45
+i) printf("%.3f",3.14159);
+   3.145;
+
+Exercicios 3.4
+a) int soma,x;
+b) x = 1;
+c) soma = 0;
+d) soma+= x;
+e) printf("A soma eh %02d",soma);
+--
+
